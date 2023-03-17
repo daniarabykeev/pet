@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "title": "Porsche",
+      "price": "270 000",
+      "category": "cars",
+      "image": "https://images.unsplash.com/photo-1611859266720-147cc87658f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cG9yc2NoZXxlbnwwfDB8MHx8&auto=format&fit=crop&w=400&q=60",
+      "image2": "https://images.unsplash.com/photo-1611651338412-8403fa6e3599?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9yc2NoZXxlbnwwfDB8MHx8&auto=format&fit=crop&w=400&q=60",
+      "description": "h.c. F. Porsche AG, usually shortened to Porsche is a German automobile manufacturer specializing in high-performance sports cars, SUVs and sedans, headquartered in Stuttgart, Baden-Württemberg, Germany.",
+      "id": 1
+    },
+    {
+      "title": "BMW",
+      "price": "290 000",
+      "category": "cars",
+      "image": "https://images.unsplash.com/photo-1610809376778-928ee2c3a561?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fEJNV3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
+      "image2": "https://images.unsplash.com/photo-1614026480209-cd9934144671?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Qk1XfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "description": "BMW, in full Bayerische Motoren Werke AG, German automaker noted for quality sports sedans and motorcycles and one of the most prominent brands in the world. Headquarters are in Munich.",
+      "id": 2
+    }
+  ]
+}
