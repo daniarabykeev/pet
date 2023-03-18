@@ -24,10 +24,10 @@ function ProductsContext({ children }) {
   const [state, dispatch] = useReducer(reducer, initState);
 
   async function getProducts() {
-    const { data } = await axios(API);
+    const res = await axios(`${API}${window.location.search}`);
     dispatch({
       type: ACTIONS.GET_PRODUCTS,
-      payload: data,
+      payload: res.data,
     });
   }
 

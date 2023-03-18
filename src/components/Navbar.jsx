@@ -7,7 +7,9 @@ function Navbar() {
       <NavLink style={{ marginRight: "50px" }} to="/">
         Home Page
       </NavLink>
-      <NavLink to="/add">Add product</NavLink>
+      <NavLink style={{ marginRight: "50px" }} to="/add">
+        Add product
+      </NavLink>
     </div>
   );
 }
