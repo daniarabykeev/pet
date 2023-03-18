@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { productsContext } from "../contexts/ProductsContext";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import { Button } from "@mui/material";
 
 const init = {
   title: "",
@@ -11,7 +14,7 @@ const init = {
   description: "",
 };
 
-function EditProductPage() {
+export default function EditProductPage() {
   const { oneProduct, getOneProduct, editProduct } =
     useContext(productsContext);
   const [product, setProduct] = useState(init);
@@ -41,72 +44,70 @@ function EditProductPage() {
     };
     setProduct(obj);
   }
+
   return (
-    <div style={{ marginTop: "50px", marginLeft: "50px" }}>
+    <Box sx={{ display: "flex", justifyContent: "center", marginTop: "50px" }}>
       <form
+        style={{ display: "flex", flexDirection: "column", width: "400px" }}
         action=""
         onSubmit={(e) => {
           handleSubmit(e);
         }}
       >
-        <input
-          placeholder="title"
-          name="title"
+        <TextField
+          label="title"
           value={product.title}
-          type="text"
-          onChange={(e) => {
-            handleChange(e);
-          }}
+          onChange={handleChange}
+          name="title"
+          id="formatted-numberformat-input"
+          variant="standard"
+          sx={{ marginBottom: "20px" }}
         />
-        <input
-          placeholder="price"
-          name="price"
+        <TextField
+          label="price"
           value={product.price}
-          type="text"
-          onChange={(e) => {
-            handleChange(e);
-          }}
+          onChange={handleChange}
+          name="price"
+          id="formatted-numberformat-input"
+          variant="standard"
+          sx={{ marginBottom: "20px" }}
         />
-        <input
-          placeholder="category"
-          name="category"
-          value={product.category}
-          type="text"
-          onChange={(e) => {
-            handleChange(e);
-          }}
-        />
-        <input
-          placeholder="image"
-          name="image"
+        <TextField
+          label="image"
           value={product.image}
-          type="text"
-          onChange={(e) => {
-            handleChange(e);
-          }}
+          onChange={handleChange}
+          name="image"
+          id="formatted-numberformat-input"
+          variant="standard"
+          sx={{ marginBottom: "20px" }}
         />
-        <input
-          placeholder="image2"
-          name="image2"
+        <TextField
+          label="image2"
           value={product.image2}
-          type="text"
-          onChange={(e) => {
-            handleChange(e);
-          }}
+          onChange={handleChange}
+          name="image2"
+          id="formatted-numberformat-input"
+          variant="standard"
+          sx={{ marginBottom: "20px" }}
         />
-        <input
-          placeholder="description"
-          name="description"
+        <TextField
+          label="description"
           value={product.description}
-          type="text"
-          onChange={(e) => {
-            handleChange(e);
-          }}
+          onChange={handleChange}
+          name="description"
+          id="formatted-numberformat-input"
+          variant="standard"
+          sx={{ marginBottom: "20px" }}
         />
-        <button>Edit product</button>
+        <Button
+          variant="contained"
+          onClick={(e) => {
+            handleSubmit(e);
+          }}
+        >
+          Edit
+        </Button>
       </form>
-    </div>
+    </Box>
   );
 }
-
-export default EditProductPage;
