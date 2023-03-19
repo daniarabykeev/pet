@@ -62,6 +62,15 @@ function AddProductPage() {
           sx={{ marginBottom: "20px" }}
         />
         <TextField
+          label="category"
+          value={product.category}
+          onChange={handleChange}
+          name="category"
+          id="formatted-numberformat-input"
+          variant="standard"
+          sx={{ marginBottom: "20px" }}
+        />
+        <TextField
           label="image"
           value={product.image}
           onChange={handleChange}

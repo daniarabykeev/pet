@@ -22,11 +22,29 @@
     {
       "title": "Ford Mustang",
       "price": "118 900",
-      "category": "",
+      "category": "cars",
       "image": "https://images.unsplash.com/photo-1547744152-14d985cb937f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9yZCUyMG11c3Rhbmd8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
       "image2": "https://images.unsplash.com/photo-1603553329474-99f95f35394f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9yZCUyMG11c3Rhbmd8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
       "description": "The Petrol engine is 4951 cc . It is available with Automatic transmission. Depending upon the variant and fuel type the Mustang has a mileage of 13.0 kmpl & Ground clearance of Mustang is 137mm. The Mustang is a 4 seater 8 cylinder car and has length of 4784mm, width of 2080mm and a wheelbase of 2720mm.",
       "id": 3
+    },
+    {
+      "title": "Audi A8",
+      "price": "135 000",
+      "category": "cars",
+      "image": "https://images.unsplash.com/photo-1555652736-e92021d28a10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXVkaXxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60",
+      "image2": "https://images.unsplash.com/photo-1561924563-d9ad0f32b23f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YXVkaXxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60",
+      "description": "Audi AG (Audi) a subsidiary of Volkswagen AG, is an automobile manufacturer. It designs, develops, manufactures, and commercializes premium cars, and motorcycles globally. The company is recognized as one of the leading car manufacturers in the premium and supercar segment.",
+      "id": 4
+    },
+    {
+      "title": "Mercedes",
+      "price": "300 000",
+      "category": "cars",
+      "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWVyY2VkZXN8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "image2": "https://images.unsplash.com/photo-1582834202430-ddcd18987a61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG1lcmNlZGVzfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
+      "description": "It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services.",
+      "id": 5
     }
   ]
 }
