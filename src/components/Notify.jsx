@@ -3,7 +3,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const notifySuccess = (text) => toast(text, { type: "Success" });
-console.log(toast);
 
 export const notifyEror = (error) => toast(error, { type: "error" });
 

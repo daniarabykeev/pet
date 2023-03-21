@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import ProductCard from "../components/ProductCard";
 import SideBar from "../components/SideBar";
+import { cartContext } from "../contexts/CartContext";
 import { productsContext } from "../contexts/ProductsContext";
 
 function HomePage() {

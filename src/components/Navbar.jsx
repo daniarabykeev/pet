@@ -18,8 +18,9 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import { Button, Stack } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import AddBoxIcon from "@mui/icons-material/AddBox";
-import { NavLink, useSearchParams } from "react-router-dom";
+import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import { productsContext } from "../contexts/ProductsContext";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -63,6 +64,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Navbar() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [input, setInput] = React.useState(
     searchParams.get("title_like") || ""
   );
@@ -143,7 +145,7 @@ export default function Navbar() {
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
-            <MailIcon />
+            <AddShoppingCartIcon />
           </Badge>
         </IconButton>
         <p>Messages</p>
@@ -188,14 +190,6 @@ export default function Navbar() {
           >
             <MenuIcon />
           </IconButton>
-          {/* <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
-            Home Page
-          </Typography> */}
           <Stack direction="row" spacing={2}>
             <Button variant="contained" endIcon={<HomeIcon />}>
               <NavLink to="/">Home</NavLink>
@@ -225,7 +219,11 @@ export default function Navbar() {
               color="inherit"
             >
               <Badge badgeContent={4} color="error">
-                <MailIcon />
+                <AddShoppingCartIcon
+                  onClick={(e) => {
+                    navigate("/cart");
+                  }}
+                />
               </Badge>
             </IconButton>
             <IconButton

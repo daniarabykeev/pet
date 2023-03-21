@@ -6,18 +6,16 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
-import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { productsContext } from "../contexts/ProductsContext";
 import { useNavigate } from "react-router-dom";
 import { notifySuccess } from "./Notify";
+import { cartContext } from "../contexts/CartContext";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -33,6 +31,8 @@ const ExpandMore = styled((props) => {
 export default function ProductCard({ item }) {
   const { deleteProduct, getProducts, products } =
     React.useContext(productsContext);
+  const { addProductToCart } = React.useContext(cartContext);
+
   const navigate = useNavigate();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -77,7 +77,11 @@ export default function ProductCard({ item }) {
         </CardContent>
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
+            <AddShoppingCartIcon
+              onClick={(e) => {
+                addProductToCart(item);
+              }}
+            />
           </IconButton>
           <IconButton aria-label="share">
             <DeleteForeverIcon
