@@ -4,6 +4,7 @@ import { productsContext } from "../contexts/ProductsContext";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
+import { notifySuccess } from "../components/Notify";
 
 const initState = {
   title: "",
@@ -22,6 +23,7 @@ function AddProductPage() {
   function handleSubmit(e) {
     e.preventDefault();
     addProduct(product);
+    notifySuccess("Success");
     setProduct(initState);
     navigate("/");
   }

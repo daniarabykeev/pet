@@ -45,6 +45,24 @@
       "image2": "https://images.unsplash.com/photo-1582834202430-ddcd18987a61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG1lcmNlZGVzfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
       "description": "It develops, manufactures and distributes premium and luxury cars and vans. The company also offers various services such as financing, leasing, car subscription, car rental, fleet management, insurance brokerage, digital services for charging and payment, besides innovative mobility services.",
       "id": 5
+    },
+    {
+      "title": "MacLaren",
+      "price": "600 000",
+      "category": "cars",
+      "image": "https://images.unsplash.com/photo-1611740801331-d8b5d6962822?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFjbGFyZW58ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "image2": "https://images.unsplash.com/photo-1641761163996-47144b5e16bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bWFjbGFyZW58ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "description": "McLaren is a pioneer that continuously pushes the boundaries. In 1981, it introduced lightweight and strong carbon fibre chassis into Formula 1 with the McLaren MP4/1. Then in 1993 it designed and built the McLaren F1 road car - the company has not built a car without a carbon fibre chassis since.",
+      "id": 6
+    },
+    {
+      "title": "Ferrari",
+      "price": "458 000",
+      "category": "cars",
+      "image": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmVycmFyaXxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60",
+      "image2": "https://images.unsplash.com/photo-1535360392524-dedff4c8b227?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZmVycmFyaXxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60",
+      "description": "Ferraris are what dreams are made of. Fast, sexy, and highly exclusive, these Italian supercars push the boundaries of performance and cause a stir wherever they go. The sensually styled Roma coupe is the most accessible in terms of price, but even it is far too expensive for most people.",
+      "id": 7
     }
   ]
 }

@@ -17,6 +17,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { productsContext } from "../contexts/ProductsContext";
 import { useNavigate } from "react-router-dom";
+import { notifySuccess } from "./Notify";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -29,7 +30,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function ProductCard() {
+export default function ProductCard({ item }) {
   const { deleteProduct, getProducts, products } =
     React.useContext(productsContext);
   const navigate = useNavigate();
@@ -44,78 +45,64 @@ export default function ProductCard() {
   };
 
   return (
-    <div
-      style={{
-        marginLeft: "50px",
-        marginTop: "50px",
-        // border: "1px solid black",
-        width: "300px",
-        borderRadius: "9px",
-        display: "flex",
-      }}
-    >
-      {products.map((item) => {
-        return (
-          <div>
-            <Card sx={{ width: 300, marginRight: "30px" }}>
-              <CardHeader
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon
-                      onClick={(e) => {
-                        navigate(`/edit/${item.id}`);
-                      }}
-                    />
-                  </IconButton>
-                }
-                title={item.title}
-                subheader=""
+    <div>
+      <Card sx={{ width: 300, marginRight: "30px" }}>
+        <CardHeader
+          action={
+            <IconButton aria-label="settings">
+              <MoreVertIcon
+                onClick={(e) => {
+                  navigate(`/edit/${item.id}`);
+                }}
               />
-              <CardMedia
-                component="img"
-                height="194"
-                image={item.image}
-                alt="Paella dish"
-              />
-              <CardContent>
-                <Typography
-                  sx={{ display: "flex", justifyContent: "center" }}
-                  variant="h6"
-                  color="green"
-                >
-                  $ {item.price}
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <DeleteForeverIcon
-                    onClick={(e) => {
-                      deleteProduct(item.id);
-                    }}
-                  />
-                </IconButton>
-                <ExpandMore
-                  expand={expanded}
-                  onClick={handleExpandClick}
-                  aria-expanded={expanded}
-                  aria-label="show more"
-                >
-                  <ExpandMoreIcon />
-                </ExpandMore>
-              </CardActions>
-              <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                  <Typography paragraph>Description:</Typography>
-                  <Typography paragraph>{item.description}</Typography>
-                </CardContent>
-              </Collapse>
-            </Card>
-          </div>
-        );
-      })}
+            </IconButton>
+          }
+          title={item.title}
+          subheader=""
+        />
+        <CardMedia
+          component="img"
+          height="194"
+          image={item.image}
+          alt="Paella dish"
+        />
+        <CardContent>
+          <Typography
+            sx={{ display: "flex", justifyContent: "center" }}
+            variant="h6"
+            color="green"
+          >
+            $ {item.price}
+          </Typography>
+        </CardContent>
+        <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <DeleteForeverIcon
+              onClick={(e) => {
+                deleteProduct(item.id);
+                notifySuccess("deleted");
+              }}
+            />
+          </IconButton>
+          <ExpandMore
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </ExpandMore>
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography paragraph>Description:</Typography>
+            <Typography paragraph>{item.description}</Typography>
+          </CardContent>
+        </Collapse>
+      </Card>
     </div>
   );
 }
