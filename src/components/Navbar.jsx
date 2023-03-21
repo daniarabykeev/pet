@@ -4,7 +4,6 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
@@ -12,7 +11,6 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { Button, Stack } from "@mui/material";
@@ -21,6 +19,7 @@ import AddBoxIcon from "@mui/icons-material/AddBox";
 import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import { productsContext } from "../contexts/ProductsContext";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import Categories from "./Categoies";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -211,6 +210,7 @@ export default function Navbar() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+          <Categories />
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
