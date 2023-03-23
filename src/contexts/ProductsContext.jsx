@@ -40,6 +40,11 @@ function ProductsContext({ children }) {
       await axios.post(`${API}`, newProduct);
       getProducts();
     } catch (error) {
+      if (error.response) {
+        if (error.response.status === 500) {
+          getProducts();
+        }
+      }
       console.log(error);
     }
   }
@@ -49,6 +54,11 @@ function ProductsContext({ children }) {
       await axios.delete(`${API}/${id}`);
       getProducts();
     } catch (error) {
+      if (error.response) {
+        if (error.response.status === 500) {
+          getProducts();
+        }
+      }
       console.log(error);
     }
   }
@@ -70,6 +80,11 @@ function ProductsContext({ children }) {
       await axios.patch(`${API}/${id}`, editedProduct);
       getProducts();
     } catch (error) {
+      if (error.response) {
+        if (error.response.status === 500) {
+          getProducts();
+        }
+      }
       console.log(error);
     }
   }
