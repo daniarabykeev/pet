@@ -21,7 +21,7 @@ function Footer() {
       </div>
       <div className="footer-bottom">
         <div className="footer-bottom-1">
-          <h4>Make the right data-driven decision that move your business</h4>
+          <h4>Make the right data-driven decision that move your business!</h4>
         </div>
         <div className="footer-bottom-2">
           <div>
@@ -36,7 +36,7 @@ function Footer() {
           </div>
           <div>
             <p>Let's chat!</p>
-            <p>hi@gmail.com</p>
+            <p>daniarabykeev@gmail.com</p>
             <div>icon icon icon icon</div>
           </div>
         </div>
