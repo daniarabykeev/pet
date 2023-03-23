@@ -24,34 +24,54 @@ function ProductsContext({ children }) {
   const [state, dispatch] = useReducer(reducer, initState);
 
   async function getProducts() {
-    const res = await axios(`${API}${window.location.search}`);
-    dispatch({
-      type: ACTIONS.GET_PRODUCTS,
-      payload: res.data,
-    });
+    try {
+      const res = await axios(`${API}${window.location.search}`);
+      dispatch({
+        type: ACTIONS.GET_PRODUCTS,
+        payload: res.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async function addProduct(newProduct) {
-    await axios.post(`${API}`, newProduct);
-    getProducts();
+    try {
+      await axios.post(`${API}`, newProduct);
+      getProducts();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async function deleteProduct(id) {
-    await axios.delete(`${API}/${id}`);
-    getProducts();
+    try {
+      await axios.delete(`${API}/${id}`);
+      getProducts();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async function getOneProduct(id) {
-    const { data } = await axios(`${API}/${id}`);
-    dispatch({
-      type: ACTIONS.GET_ONE_PRODUCT,
-      payload: data,
-    });
+    try {
+      const { data } = await axios(`${API}/${id}`);
+      dispatch({
+        type: ACTIONS.GET_ONE_PRODUCT,
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async function editProduct(id, editedProduct) {
-    await axios.patch(`${API}/${id}`, editedProduct);
-    getProducts();
+    try {
+      await axios.patch(`${API}/${id}`, editedProduct);
+      getProducts();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   const value = {
