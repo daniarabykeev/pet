@@ -20,6 +20,7 @@ function HomePage() {
           display: "flex",
           flexWrap: "wrap",
           gap: "20px",
+          marginBottom: "100px",
         }}
       >
         {products.map((item) => {
