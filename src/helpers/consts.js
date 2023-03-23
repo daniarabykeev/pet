@@ -1,4 +1,4 @@
-export const API = "http://localhost:8002/products";
+export const API = "https://pet-project-db.vercel.app/products";
 
 export const ACTIONS = {
   GET_PRODUCTS: "GET_PRODUCTS",
