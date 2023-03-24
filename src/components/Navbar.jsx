@@ -13,13 +13,17 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import { Button, Stack } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import { productsContext } from "../contexts/ProductsContext";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import LogoutIcon from "@mui/icons-material/Logout";
+import LoginIcon from "@mui/icons-material/Login";
 import Categories from "./Categoies";
+import { authContext } from "../contexts/AuthContext";
+import { cartContext } from "../contexts/CartContext";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -68,6 +72,8 @@ export default function Navbar() {
     searchParams.get("title_like") || ""
   );
   const { getProducts } = React.useContext(productsContext);
+  const { user, login, logout } = React.useContext(authContext);
+  const { cart } = React.useContext(cartContext);
 
   React.useEffect(() => {
     const obj = Object.fromEntries([...searchParams]);
@@ -194,7 +200,11 @@ export default function Navbar() {
               <NavLink to="/">Home</NavLink>
             </Button>
             <Button variant="contained" endIcon={<AddBoxIcon />}>
-              <NavLink to="/add">Add product</NavLink>
+              <NavLink>
+                {user && user.email === "daniarabykeev@gmail.com" && (
+                  <NavLink to="/add">Add product</NavLink>
+                )}
+              </NavLink>
             </Button>
           </Stack>
           <Search>
@@ -212,13 +222,25 @@ export default function Navbar() {
           </Search>
           <Categories />
           <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              display: {
+                xs: "none",
+                md: "flex",
+                alignItems: "center",
+              },
+            }}
+          >
             <IconButton
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
             >
-              <Badge badgeContent={4} color="error">
+              <Badge
+                sx={{ marginRight: "50px" }}
+                badgeContent={cart.products.length}
+                color="error"
+              >
                 <AddShoppingCartIcon
                   onClick={(e) => {
                     navigate("/cart");
@@ -226,38 +248,33 @@ export default function Navbar() {
                 />
               </Badge>
             </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
           </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
+          <Box
+            sx={{
+              display: {
+                xs: "none",
+                md: "flex",
+                alignItems: "center",
+              },
+            }}
+          >
+            {user ? (
+              <>
+                {user.email}
+                <LogoutIcon
+                  sx={{ marginLeft: "10px" }}
+                  onClick={(e) => {
+                    logout();
+                  }}
+                />
+              </>
+            ) : (
+              <LoginIcon
+                onClick={(e) => {
+                  navigate("/login");
+                }}
+              />
+            )}
           </Box>
         </Toolbar>
       </AppBar>
