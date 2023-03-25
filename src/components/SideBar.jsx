@@ -4,6 +4,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Calendar from "./Calendar";
 
 export default function SideBar() {
   const [expanded, setExpanded] = React.useState(false);
@@ -24,7 +25,7 @@ export default function SideBar() {
           id="panel1bh-header"
         >
           <Typography sx={{ width: "100%", flexShrink: 0 }}>
-            General settings
+            Discounts calendar
           </Typography>
           {/* <Typography sx={{ color: "text.secondary" }}>
             I am an accordion
@@ -32,8 +33,7 @@ export default function SideBar() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-            Aliquam eget maximus est, id dignissim quam.
+            <Calendar />
           </Typography>
         </AccordionDetails>
       </Accordion>
