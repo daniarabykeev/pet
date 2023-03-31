@@ -144,7 +144,7 @@ export default function ProductCard({ item }) {
                     }}
                   >
                     <EditIcon />
-                    Edit
+                    Edit product
                   </button>
                 </MenuItem>
               </StyledMenu>
@@ -202,7 +202,7 @@ export default function ProductCard({ item }) {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph>Description:</Typography>
+            <Typography paragraph>See more:</Typography>
             <Typography paragraph>{item.description}</Typography>
           </CardContent>
         </Collapse>
