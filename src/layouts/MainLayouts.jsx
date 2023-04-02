@@ -8,7 +8,7 @@ function MainLayouts() {
     <div>
       <Navbar />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
