@@ -63,6 +63,15 @@
       "image2": "https://images.unsplash.com/photo-1535360392524-dedff4c8b227?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZmVycmFyaXxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60",
       "description": "Ferraris are what dreams are made of. Fast, sexy, and highly exclusive, these Italian supercars push the boundaries of performance and cause a stir wherever they go. The sensually styled Roma coupe is the most accessible in terms of price, but even it is far too expensive for most people.",
       "id": 7
+    },
+    {
+      "title": "Ducati",
+      "price": "111 000",
+      "category": "motorCicles",
+      "image": "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZHVjYXRpfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=400&q=60",
+      "image2": "https://images.unsplash.com/photo-1615812595024-43ac7a9c0586?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZHVjYXRpfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=400&q=60",
+      "description": "Ferraris are what dreams are made of. Fast, sexy, and highly exclusive, these Italian supercars push the boundaries of performance and cause a stir wherever they go. The sensually styled Roma coupe is the most accessible in terms of price, but even it is far too expensive for most people.",
+      "id": 7
     }
   ]
 }
